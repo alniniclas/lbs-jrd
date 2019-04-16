@@ -15,6 +15,9 @@ plugins {
 
     // SpotBugs (successor to FindBugs)
     id("com.github.spotbugs") version "1.7.1"
+
+    // SonarQube
+    id("org.sonarqube") version "2.7"
 }
 
 repositories {
@@ -34,4 +37,11 @@ dependencies {
 application {
     // Define the main class for the application
     mainClassName = "se.chalmers.lbs.jrd.App"
+}
+
+sonarqube {
+    properties {
+        property("sonar.projectKey", "jrdb")
+        property("sonar.projectName", "java_race_detection_benchmarks")
+    }
 }
