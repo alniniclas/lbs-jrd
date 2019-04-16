@@ -12,6 +12,9 @@ plugins {
 
     // Apply the application plugin to add support for building an application
     application
+
+    // SpotBugs (successor to FindBugs)
+    id("com.github.spotbugs") version "1.7.1"
 }
 
 repositories {
