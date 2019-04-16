@@ -50,3 +50,56 @@ capabilities and tradeoffs may thus help in preventing vulnerabilities caused
 by data races in Java by making it easier to choose the right tool for the job,
 as well as pinpointing potential blind spots that may require extra attention
 or the use of a different tool.
+
+## Building and running
+
+This project uses the
+[Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
+to build and run the code used for the various benchmarks. To use it, simply
+run:
+
+    $ ./gradlew <command>
+
+in the top-level directory of this project (where the files `gradlew` and
+`gradlew.bat` are located), no manual installation required!
+
+To build the project, run:
+
+    $ ./gradlew build
+
+To run the project, run:
+
+    $ ./gradlew run
+
+To clean the project, run:
+
+    $ ./gradlew clean
+
+
+### SpotBugs (FindBugs)
+
+To run the SpotBugs plugin on the project code, run:
+
+    $ ./gradlew spotbugsMain
+
+The generated reports will be found in `build/reports/spotbugs`.
+
+### Error Prone
+
+To compile using the Error Prone plugin, run:
+
+    $ ./gradlew errorproneCompile
+
+Any errors found will be displayed as compiler warnings in the command line
+output.
+
+### SonarQube
+
+To run the SonarQube plugin, first
+[install and run](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
+the SonarQube server. With the server running, run:
+
+    $ ./gradlew sonarqube
+
+Results can be seen by visiting `http://localhost:9000/dashboard?id=jrdb` while
+the server is running.
