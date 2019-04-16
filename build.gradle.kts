@@ -1,3 +1,4 @@
+import com.github.spotbugs.SpotBugsTask
 import net.ltgt.gradle.errorprone.errorprone
 
 /*
@@ -70,5 +71,13 @@ tasks.register<JavaCompile>("errorproneCompile") {
     options.errorprone.isEnabled.set(true)
     // It can then be configured for the task
     options.errorprone.disableWarningsInGeneratedCode.set(true)
+}
+
+tasks.withType<SpotBugsTask>().configureEach {
+    ignoreFailures = true
+    reports {
+        xml.isEnabled = false
+        html.isEnabled = true
+    }
 }
 
