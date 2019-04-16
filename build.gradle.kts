@@ -71,6 +71,9 @@ tasks.register<JavaCompile>("errorproneCompile") {
     options.errorprone.isEnabled.set(true)
     // It can then be configured for the task
     options.errorprone.disableWarningsInGeneratedCode.set(true)
+
+    // Always rerun this task (as we want the command line output from doing the actual compilation).
+    outputs.upToDateWhen { false }
 }
 
 tasks.withType<SpotBugsTask>().configureEach {
