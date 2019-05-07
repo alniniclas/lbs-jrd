@@ -1,6 +1,6 @@
 package se.chalmers.lbs.jrd.counter;
 
-import com.facebook.infer.annotation.ThreadSafe;
+import javax.annotation.concurrent.ThreadSafe;
 
 @ThreadSafe
 public interface Counter {
