@@ -35,6 +35,7 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:27.0.1-jre")
+    implementation("com.facebook.infer.annotation:infer-annotation:0.11.2")
 
     // Use JUnit test framework
     testImplementation("junit:junit:4.12")

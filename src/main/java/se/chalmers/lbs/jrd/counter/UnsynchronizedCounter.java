@@ -1,6 +1,6 @@
 package se.chalmers.lbs.jrd.counter;
 
-import javax.annotation.concurrent.ThreadSafe;
+import com.facebook.infer.annotation.ThreadSafe;
 
 @ThreadSafe
 public class UnsynchronizedCounter implements Counter {
