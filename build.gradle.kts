@@ -78,6 +78,8 @@ tasks.register<JavaCompile>("errorproneCompile") {
 
 tasks.withType<SpotBugsTask>().configureEach {
     ignoreFailures = true
+    effort = "max"
+    reportLevel = "low"
     reports {
         xml.isEnabled = false
         html.isEnabled = true
