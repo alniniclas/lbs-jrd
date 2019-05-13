@@ -7,7 +7,7 @@ import java.util.Date;
 
 @ThreadSafe
 public class UnsafeDoubleCheckedLazySingletonDate {
-    @GuardedBy("SynchronizedLazySingletonDate.class")
+    @GuardedBy("UnsafeDoubleCheckedLazySingletonDate.class")
     private static Date epoch;
 
     public static Date getEpoch() {
