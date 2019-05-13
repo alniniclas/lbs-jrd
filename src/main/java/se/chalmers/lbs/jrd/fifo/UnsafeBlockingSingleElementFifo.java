@@ -16,6 +16,7 @@ public class UnsafeBlockingSingleElementFifo<T> implements BlockingFifo<T> {
                 lock.wait();
             }
             this.item = item;
+            this.lock.notifyAll();
         }
     }
 
@@ -25,7 +26,10 @@ public class UnsafeBlockingSingleElementFifo<T> implements BlockingFifo<T> {
             if (this.item == null) {
                 lock.wait();
             }
-            return this.item;
+            final T item = this.item;
+            this.item = null;
+            this.lock.notifyAll();
+            return item;
         }
     }
 }
