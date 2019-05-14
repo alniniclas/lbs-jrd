@@ -1,6 +1,5 @@
 package se.chalmers.lbs.jrd.staticvariable;
 
-import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
@@ -11,7 +10,6 @@ import java.util.Date;
  */
 @ThreadSafe
 public class SafeDoubleCheckedLazySingletonDate {
-    @GuardedBy("SafeDoubleCheckedLazySingletonDate.class")
     private static volatile Date epoch;
 
     // Disallow instantiation.
