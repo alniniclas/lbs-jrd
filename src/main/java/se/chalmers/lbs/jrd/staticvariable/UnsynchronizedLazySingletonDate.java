@@ -4,6 +4,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Performs no synchronization. Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsynchronizedLazySingletonDate {
     private static Date epoch;

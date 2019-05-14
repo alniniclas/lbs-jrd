@@ -5,6 +5,10 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Synchronizes using the double-checked locking idiom. May cause not-fully-initialized object to
+ * become visible due to potential reordering by compiler. Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsafeDoubleCheckedLazySingletonDate {
     @GuardedBy("UnsafeDoubleCheckedLazySingletonDate.class")

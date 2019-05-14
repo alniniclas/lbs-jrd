@@ -4,6 +4,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Synchronizes using a lazily loaded private holder class.
+ */
 @ThreadSafe
 public class HolderClassLazySingletonDate {
 

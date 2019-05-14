@@ -5,6 +5,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Synchronizes using {@code .class}.
+ */
 @ThreadSafe
 public class SynchronizedLazySingletonDate {
     @GuardedBy("SynchronizedLazySingletonDate.class")

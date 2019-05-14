@@ -5,6 +5,10 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Synchronizes using an almost correct version of the double-checked locking idiom but modifies the
+ * created {@code Date} afterwards. Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsafelyUpdatedLazySingletonDate {
     @GuardedBy("UnsafelyUpdatedLazySingletonDate.class")

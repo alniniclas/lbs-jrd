@@ -4,6 +4,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Synchronizes using benign race. Has a data race but should still be thread safe.
+ */
 @ThreadSafe
 public class BenignRaceLazySingletonDate {
     private static Instant epoch;

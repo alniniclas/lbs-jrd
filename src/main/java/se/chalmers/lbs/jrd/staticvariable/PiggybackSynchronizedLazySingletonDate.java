@@ -5,6 +5,10 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Synchronizes by piggybacking on synchronization of different variable. Should be thread safe but
+ * may be error-prone and confusing.
+ */
 @ThreadSafe
 public class PiggybackSynchronizedLazySingletonDate {
     @GuardedBy("PiggybackSynchronizedLazySingletonDate.class")

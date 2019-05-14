@@ -3,6 +3,9 @@ package se.chalmers.lbs.jrd.staticvariable;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Synchronizes using {@code .class}.
+ */
 @ThreadSafe
 public class SynchronizedStaticStringHolder {
     @GuardedBy("SynchronizedStaticStringHolder.class")
