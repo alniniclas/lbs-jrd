@@ -4,6 +4,11 @@ import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.atomic.AtomicLong;
 
+/**
+ * Synchronizes using individual private lock object. To avoid deadlocks, uses the unique ID of
+ * accounts to always acquire locks in the same order. Thread safe, but may be confusing for tools
+ * due to synchronizing on local variables.
+ */
 @ThreadSafe
 public class OrderedSynchronizationBankAccount implements BankAccount<OrderedSynchronizationBankAccount> {
 

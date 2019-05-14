@@ -2,6 +2,9 @@ package se.chalmers.lbs.jrd.bankaccount;
 
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Performs no synchronization. Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsynchronizedBankAccount implements BankAccount<UnsynchronizedBankAccount> {
 

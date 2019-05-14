@@ -3,6 +3,9 @@ package se.chalmers.lbs.jrd.bankaccount;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Synchronizes using a static transaction lock.
+ */
 @ThreadSafe
 public class SynchronizedBankAccount implements BankAccount<SynchronizedBankAccount> {
 

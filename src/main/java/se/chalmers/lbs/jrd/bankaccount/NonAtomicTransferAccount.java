@@ -3,6 +3,11 @@ package se.chalmers.lbs.jrd.bankaccount;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Synchronizes using a static transaction lock but releases the lock between separate operations
+ * during transactions. Should have no data races, but is still not thread safe due to transfer
+ * being non-atomic.
+ */
 @ThreadSafe
 public class NonAtomicTransferAccount implements BankAccount<NonAtomicTransferAccount> {
 

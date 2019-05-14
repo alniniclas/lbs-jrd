@@ -3,6 +3,10 @@ package se.chalmers.lbs.jrd.bankaccount;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Synchronizes using individual private lock object for deposits and withdrawals. To avoid
+ * deadlocks, uses a static transaction lock for operations on multiple accounts.
+ */
 @ThreadSafe
 public class IndividuallySynchronizedBankAccount implements BankAccount<IndividuallySynchronizedBankAccount> {
 
