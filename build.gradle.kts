@@ -32,6 +32,7 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:27.0.1-jre")
+    implementation("com.facebook.infer.annotation:infer-annotation:0.11.2")
 
     errorprone("com.google.errorprone:error_prone_core:2.3.3")
 }
