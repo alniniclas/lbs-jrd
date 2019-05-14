@@ -13,9 +13,6 @@ plugins {
     // Apply the java plugin to add support for Java
     java
 
-    // Apply the application plugin to add support for building an application
-    application
-
     // SpotBugs (successor to FindBugs)
     id("com.github.spotbugs") version "1.7.1"
 
@@ -36,15 +33,7 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:27.0.1-jre")
 
-    // Use JUnit test framework
-    testImplementation("junit:junit:4.12")
-
     errorprone("com.google.errorprone:error_prone_core:2.3.3")
-}
-
-application {
-    // Define the main class for the application
-    mainClassName = "se.chalmers.lbs.jrd.App"
 }
 
 sonarqube {
