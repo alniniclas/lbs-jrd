@@ -2,6 +2,11 @@ package se.chalmers.lbs.jrd.fifo;
 
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Blocking. Attempts to block using {@code Thread.sleep()} with no additional synchronization. May
+ * result in infinite loop if the compiler optimizes away the null checks in the while loops. Not
+ * actually thread safe.
+ */
 @ThreadSafe
 public class SleepBlockingSingleElementFifo<T> implements BlockingFifo<T> {
     private T item;

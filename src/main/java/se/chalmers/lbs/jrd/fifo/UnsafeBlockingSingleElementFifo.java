@@ -3,6 +3,12 @@ package se.chalmers.lbs.jrd.fifo;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Blocking. Synchronizes using private lock object. Uses if-statement rather than while-loop for
+ * checking the blocking conditions, causing incorrect behavior if the condition is not met upon
+ * wake-up (e.g. in the case of multiple calls to {@code enqueue} or {@code dequeue} being woken up,
+ * or in the case of a spurious wake-up). Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsafeBlockingSingleElementFifo<T> implements BlockingFifo<T> {
     private final Object lock = new Object();

@@ -4,6 +4,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/**
+ * Non-blocking. Performs no synchronization. Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsynchronizedFifo<T> implements Fifo<T> {
     private final Queue<T> queue = new ArrayDeque<>();

@@ -2,6 +2,9 @@ package se.chalmers.lbs.jrd.fifo;
 
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Non-blocking. Performs no synchronization. Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsynchronizedSingleElementFifo<T> implements Fifo<T> {
     private T item;

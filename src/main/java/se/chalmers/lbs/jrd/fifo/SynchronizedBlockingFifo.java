@@ -5,6 +5,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/**
+ * Blocking. Synchronizes on private queue object.
+ */
 @ThreadSafe
 public class SynchronizedBlockingFifo<T> implements BlockingFifo<T> {
 

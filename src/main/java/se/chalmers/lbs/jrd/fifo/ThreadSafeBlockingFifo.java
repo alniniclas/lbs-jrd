@@ -4,6 +4,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * Blocking. Synchronizes using {@code ArrayBlockingQueue}.
+ */
 @ThreadSafe
 public class ThreadSafeBlockingFifo<T> implements BlockingFifo<T> {
     private final BlockingQueue<T> queue;

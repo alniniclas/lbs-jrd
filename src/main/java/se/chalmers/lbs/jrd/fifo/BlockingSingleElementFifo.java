@@ -3,6 +3,9 @@ package se.chalmers.lbs.jrd.fifo;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Blocking. Synchronizes using private lock object.
+ */
 @ThreadSafe
 public class BlockingSingleElementFifo<T> implements BlockingFifo<T> {
     private final Object lock = new Object();

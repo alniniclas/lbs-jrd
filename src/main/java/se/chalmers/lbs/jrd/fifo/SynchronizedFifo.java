@@ -5,6 +5,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/**
+ * Non-blocking. Synchronizes on private queue object.
+ */
 @ThreadSafe
 public class SynchronizedFifo<T> implements Fifo<T> {
 
