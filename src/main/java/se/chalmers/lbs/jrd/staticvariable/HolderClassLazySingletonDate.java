@@ -10,6 +10,10 @@ import java.util.Date;
 @ThreadSafe
 public class HolderClassLazySingletonDate {
 
+    // Disallow instantiation.
+    private HolderClassLazySingletonDate() {
+    }
+
     public static Date getEpoch() {
         return new Date(DateHolder.EPOCH.getTime());
     }

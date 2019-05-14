@@ -14,6 +14,10 @@ public class UnsafelyUpdatedLazySingletonDate {
     @GuardedBy("UnsafelyUpdatedLazySingletonDate.class")
     private static volatile Date epoch;
 
+    // Disallow instantiation.
+    private UnsafelyUpdatedLazySingletonDate() {
+    }
+
     public static Date getEpoch() {
         if (epoch == null) {
             synchronized (UnsafelyUpdatedLazySingletonDate.class) {

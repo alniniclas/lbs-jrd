@@ -12,6 +12,10 @@ import java.util.Date;
 public class UnsafeEagerSingletonDate {
     private static final Date EPOCH = Date.from(Instant.EPOCH);
 
+    // Disallow instantiation.
+    private UnsafeEagerSingletonDate() {
+    }
+
     public static Date getEpoch() {
         return EPOCH;
     }

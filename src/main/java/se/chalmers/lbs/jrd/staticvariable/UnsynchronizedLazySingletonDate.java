@@ -11,6 +11,10 @@ import java.util.Date;
 public class UnsynchronizedLazySingletonDate {
     private static Date epoch;
 
+    // Disallow instantiation.
+    private UnsynchronizedLazySingletonDate() {
+    }
+
     public static Date getEpoch() {
         if (epoch == null) {
             epoch = Date.from(Instant.EPOCH);

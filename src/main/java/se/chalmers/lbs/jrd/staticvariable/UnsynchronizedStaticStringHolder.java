@@ -10,6 +10,10 @@ import javax.annotation.concurrent.ThreadSafe;
 public class UnsynchronizedStaticStringHolder {
     private static String string = "";
 
+    // Disallow instantiation.
+    private UnsynchronizedStaticStringHolder() {
+    }
+
     public static void setString(String string) {
         UnsynchronizedStaticStringHolder.string = string;
     }

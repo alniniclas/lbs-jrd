@@ -10,6 +10,10 @@ import javax.annotation.concurrent.ThreadSafe;
 public class VolatileStaticStringHolder {
     private static volatile String string = "";
 
+    // Disallow instantiation.
+    private VolatileStaticStringHolder() {
+    }
+
     public static void setString(String string) {
         VolatileStaticStringHolder.string = string;
     }

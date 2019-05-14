@@ -11,6 +11,9 @@ public class ImproperlySynchronizedStaticStringHolder {
     @GuardedBy("this")
     private static String string = "";
 
+    public ImproperlySynchronizedStaticStringHolder() {
+    }
+
     public synchronized void setString(String string) {
         ImproperlySynchronizedStaticStringHolder.string = string;
     }

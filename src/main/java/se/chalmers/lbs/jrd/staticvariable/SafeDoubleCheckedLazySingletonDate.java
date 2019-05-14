@@ -14,6 +14,10 @@ public class SafeDoubleCheckedLazySingletonDate {
     @GuardedBy("SafeDoubleCheckedLazySingletonDate.class")
     private static volatile Date epoch;
 
+    // Disallow instantiation.
+    private SafeDoubleCheckedLazySingletonDate() {
+    }
+
     public static Date getEpoch() {
         if (epoch == null) {
             synchronized (SafeDoubleCheckedLazySingletonDate.class) {

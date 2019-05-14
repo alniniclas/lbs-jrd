@@ -13,6 +13,10 @@ public class SynchronizedLazySingletonDate {
     @GuardedBy("SynchronizedLazySingletonDate.class")
     private static Date epoch;
 
+    // Disallow instantiation.
+    private SynchronizedLazySingletonDate() {
+    }
+
     public static synchronized Date getEpoch() {
         if (epoch == null) {
             epoch = Date.from(Instant.EPOCH);

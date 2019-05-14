@@ -11,6 +11,10 @@ import java.util.Date;
 public class BenignRaceLazySingletonDate {
     private static Instant epoch;
 
+    // Disallow instantiation.
+    private BenignRaceLazySingletonDate() {
+    }
+
     public static Date getEpoch() {
         if (epoch == null) {
             epoch = constructEpoch();

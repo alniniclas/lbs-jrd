@@ -15,6 +15,10 @@ public class PiggybackSynchronizedLazySingletonDate {
     private static boolean initialized = false;
     private static Date epoch;
 
+    // Disallow instantiation.
+    private PiggybackSynchronizedLazySingletonDate() {
+    }
+
     public static synchronized Date getEpoch() {
         synchronized (PiggybackSynchronizedLazySingletonDate.class) {
             if (!initialized) {

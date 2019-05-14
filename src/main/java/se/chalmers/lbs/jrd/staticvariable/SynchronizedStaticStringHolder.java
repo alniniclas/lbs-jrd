@@ -11,6 +11,10 @@ public class SynchronizedStaticStringHolder {
     @GuardedBy("SynchronizedStaticStringHolder.class")
     private static String string = "";
 
+    // Disallow instantiation.
+    private SynchronizedStaticStringHolder() {
+    }
+
     public static synchronized void setString(String string) {
         SynchronizedStaticStringHolder.string = string;
     }
