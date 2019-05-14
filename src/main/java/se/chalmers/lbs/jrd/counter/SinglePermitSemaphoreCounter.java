@@ -4,6 +4,10 @@ import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Synchronizes using a semaphore with a single permit. Thread safe, but possibly dubious coding
+ * practice.
+ */
 @ThreadSafe
 public class SinglePermitSemaphoreCounter implements Counter {
     private final Semaphore semaphore = new Semaphore(1);

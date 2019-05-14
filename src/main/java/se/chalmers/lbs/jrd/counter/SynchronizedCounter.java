@@ -3,6 +3,9 @@ package se.chalmers.lbs.jrd.counter;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Synchronizes using {@code this}.
+ */
 @ThreadSafe
 public class SynchronizedCounter implements Counter {
     @GuardedBy("this")

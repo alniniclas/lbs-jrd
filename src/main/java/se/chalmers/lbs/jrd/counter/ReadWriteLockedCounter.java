@@ -5,6 +5,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * Synchronizes using a read-write lock.
+ */
 @ThreadSafe
 public class ReadWriteLockedCounter implements Counter {
     private final ReadWriteLock lock = new ReentrantReadWriteLock();

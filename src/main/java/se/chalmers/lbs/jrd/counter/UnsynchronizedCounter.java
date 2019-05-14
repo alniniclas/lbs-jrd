@@ -2,6 +2,9 @@ package se.chalmers.lbs.jrd.counter;
 
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Performs no synchronization. Not actually thread safe.
+ */
 @ThreadSafe
 public class UnsynchronizedCounter implements Counter {
     private long count;

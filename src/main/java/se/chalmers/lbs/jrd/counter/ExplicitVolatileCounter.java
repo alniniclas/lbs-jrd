@@ -2,6 +2,10 @@ package se.chalmers.lbs.jrd.counter;
 
 import javax.annotation.concurrent.ThreadSafe;
 
+/**
+ * Synchronizes using volatile variable, with no compound operations. Should have no data races, but
+ * is still not thread safe due to {@code getAndIncrement} being non-atomic.
+ */
 @ThreadSafe
 public class ExplicitVolatileCounter implements Counter {
     private volatile long count;

@@ -5,6 +5,9 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Synchronizes using {@code ReentrantLock}.
+ */
 @ThreadSafe
 public class LockedCounter implements Counter {
     private final Lock lock = new ReentrantLock();

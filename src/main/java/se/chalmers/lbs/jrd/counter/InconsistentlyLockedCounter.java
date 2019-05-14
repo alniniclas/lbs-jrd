@@ -5,6 +5,10 @@ import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Mixes synchronization using {@code lock.lock()} and {@code synchronized(lock)}. Not actually
+ * thread safe.
+ */
 @ThreadSafe
 public class InconsistentlyLockedCounter implements Counter {
     private final Lock lock = new ReentrantLock();

@@ -4,6 +4,9 @@ import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Synchronizes using a semaphor with multiple permits. Not actually thread safe.
+ */
 @ThreadSafe
 public class MultiPermitSemaphoreCounter implements Counter {
     private final Semaphore semaphore = new Semaphore(10);

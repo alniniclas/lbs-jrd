@@ -3,6 +3,9 @@ package se.chalmers.lbs.jrd.counter;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.atomic.AtomicLong;
 
+/**
+ * Synchronizes using {@code AtomicLong}.
+ */
 @ThreadSafe
 public class AtomicCounter implements Counter {
     private final AtomicLong count;
